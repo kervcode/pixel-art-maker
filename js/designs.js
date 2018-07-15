@@ -1,37 +1,34 @@
 let gridColor,
-gridHeight,
-gridWidth,
-button,
-tableGrid,
-tableRow,
-tableColumn;
-button = document.querySelector('form').lastElementChild;
-tableGrid = document.querySelector('#pixelCanvas');
+    gridHeight,
+    gridWidth,
+    button,
+    tableGrid,
+    tableRow,
+    tableColumn;
+    
+    button = document.querySelector('input[type=submit]');
+    tableGrid = document.querySelector('#pixelCanvas');
 
-// let gridHeight = document.querySelector('#inputHeight').value;
-// let gridWidth = document.querySelector('#inputWidth').value;
 // Select color input
+gridColor = document.querySelector('#colorPicker');
 
 // Select size input
-
+gridHeight = document.querySelector('#inputHeight');
+gridWidth = document.querySelector('#inputWidth');
 
 // When size is submitted by the user, call makeGrid()
-button.addEventListener("click", function(e){
-  gridHeight = document.querySelector('#inputHeight').value;
-  gridWidth = document.querySelector('#inputWidth').value;
-  e.preventDefault();
-  makeGrid();
-});
+  button.addEventListener("click", function(e) {
+    e.preventDefault();
+    clearGrid();
+    makeGrid();
+  });
 
-
+//grid creation function
 function makeGrid() {
-  clearGrid();
-  // gridColor = document.querySelector('#colorPicker').value;
-  button = document.querySelector('form').lastElementChild;
   //grid loop
-  for (i = 0; i < gridHeight; i++) {
+  for (i = 0; i < gridHeight.value; i++) {
     tableRow = document.createElement('tr');
-    for (j = 0; j < gridWidth; j++) {
+    for (j = 0; j < gridWidth.value; j++) {
       tableColumn = document.createElement('td');
       tableRow.appendChild(tableColumn);
     }
@@ -39,9 +36,12 @@ function makeGrid() {
   }  
 }  
 
-// clear grid function
-function clearGrid(){ 
-  tableGrid.removeChild();
+//empty grid 
+function clearGrid() {
+    const emptyGrid;
+    if (emptyGrid = tableGrid.hasChildNodes();
+    // It has at least one
+    tableGrid.removeChild(emptyGrid);
+  
 }
-
 
