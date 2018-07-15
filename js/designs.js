@@ -1,5 +1,5 @@
-let gridColor,
-    gridHeight,
+// let gridColor,
+let gridHeight,
     gridWidth,
     button,
     tableGrid,
@@ -10,7 +10,7 @@ let gridColor,
     tableGrid = document.querySelector('#pixelCanvas');
 
 // Select color input
-gridColor = document.querySelector('#colorPicker');
+// gridColor = document.querySelector('#colorPicker');
 
 // Select size input
 gridHeight = document.querySelector('#inputHeight');
@@ -38,10 +38,9 @@ function makeGrid() {
 
 //empty grid 
 function clearGrid() {
-    const emptyGrid;
-    if (emptyGrid = tableGrid.hasChildNodes();
-    // It has at least one
-    tableGrid.removeChild(emptyGrid);
-  
+  tableGrid.innerHTML = '';
 }
+
+
+
 
