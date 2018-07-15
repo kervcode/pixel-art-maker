@@ -10,7 +10,7 @@ let gridHeight,
     tableGrid = document.querySelector('#pixelCanvas');
 
 // Select color input
-// gridColor = document.querySelector('#colorPicker');
+gridColor = document.querySelector('#colorPicker');
 
 // Select size input
 gridHeight = document.querySelector('#inputHeight');
@@ -19,12 +19,14 @@ gridWidth = document.querySelector('#inputWidth');
 // When size is submitted by the user, call makeGrid()
   button.addEventListener("click", function(e) {
     e.preventDefault();
-    clearGrid();
+    // clearGrid();
     makeGrid();
   });
 
 //grid creation function
 function makeGrid() {
+  //empty table before creating the grid
+  tableGrid.innerHTML = '';
   //grid loop
   for (i = 0; i < gridHeight.value; i++) {
     tableRow = document.createElement('tr');
@@ -34,13 +36,12 @@ function makeGrid() {
     }
     tableGrid.appendChild(tableRow);
   }  
-}  
-
-//empty grid 
-function clearGrid() {
-  tableGrid.innerHTML = '';
-}
+};
 
 
-
-
+//change td background color
+tableGrid.addEventListener('click', function(e){
+  if (e.target.nodeName === 'TD'){
+    e.target.style.backgroundColor = gridColor.value;
+  }
+});
