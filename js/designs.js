@@ -1,13 +1,11 @@
 // let gridColor,
 let gridHeight,
     gridWidth,
-    button,
-    tableGrid,
     tableRow,
     tableColumn;
     
-    button = document.querySelector('input[type=submit]');
-    tableGrid = document.querySelector('#pixelCanvas');
+const button = document.querySelector('input[type=submit]');
+const tableGrid = document.querySelector('#pixelCanvas');
 
 // Select color input
 gridColor = document.querySelector('#colorPicker');
